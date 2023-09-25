@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.successLiveData.observe(this) { qa ->
             val array = Array(qa.datas.size) {
-                QAItem(qa.datas[it].title, qa.datas[it].apkLink)
+                QAItem(qa.datas[it].title, qa.datas[it].link)
             }
             val intent = Intent(this, QAListActivity::class.java)
             intent.putExtra("qalist", array)

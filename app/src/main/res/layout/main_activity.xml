@@ -24,10 +24,13 @@
         android:id="@+id/jieba_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@null"
+        android:background="#EEEFEFEF"
         android:gravity="bottom"
         android:minHeight="100dp"
-        android:text="迅雷不及掩耳盗铃儿响叮当仁不让之势" />
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="迅雷不及掩耳盗铃儿响叮当仁不让之势"
+        android:textColor="#333333" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/jiebaa"
