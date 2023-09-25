@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdk 34
+    ndkVersion '25.1.8937393'
+    namespace 'com.example.hellolibs'
+
+    defaultConfig {
+//        applicationId = 'com.example.hellolibs'
+        minSdkVersion 30
+        targetSdkVersion 33
+        versionCode = 1
+        versionName = '1.0'
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_STL=c++_static'
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                          'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path 'src/main/cpp/CMakeLists.txt'
+        }
+    }
+    namespace 'com.example.hellolibs'
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    // uncomment out this one to generate lib binaries,
+    // and also uncommented out the one in settings.gradle
+    // after lib is generated, just comment them out again
+//    api project(':gen-libs')
+}

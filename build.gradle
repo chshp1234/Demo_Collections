@@ -1,0 +1,48 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+
+buildscript {
+
+    ext {
+        compose_version = '1.5.1'
+        kotlin_version = "1.9.10"
+        coroutines_version = '1.7.1'
+        java_version = JavaVersion.VERSION_17
+    }
+
+    repositories {
+        mavenCentral()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3'
+        classpath 'de.undercouch:gradle-download-task:4.1.2'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+//plugins {
+//    id 'de.undercouch.download' version '4.1.2' apply false
+//}
+
+allprojects {
+
+    repositories {
+        mavenCentral()
+        google()
+        maven { url 'https://jitpack.io' }
+        maven { url "https://androidx.dev/storage/compose-compiler/repository/" }
+    }
+
+    dependencies {
+        gradleApi()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

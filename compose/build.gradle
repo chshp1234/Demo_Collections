@@ -1,0 +1,144 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+}
+
+android {
+    namespace 'com.csp.compose'
+    compileSdk 34
+
+    defaultConfig {
+//        applicationId "com.csp.compose"
+        minSdkVersion 30
+        compileSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+        freeCompilerArgs += ["-P", "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=true"]
+    }
+    javaToolchains {
+        version = "17"
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+//        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerExtensionVersion "1.5.3"
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.ui:ui-graphics:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation "androidx.compose.animation:animation:$compose_version"
+    implementation "androidx.compose.runtime:runtime:$compose_version"
+    implementation "androidx.compose.foundation:foundation:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.material3:material3:1.1.1"
+    implementation "androidx.compose.material3:material3-window-size-class:1.1.1"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    implementation 'androidx.activity:activity-compose:1.7.2'
+
+    implementation project(':common')
+//    implementation(project(':jieba_android'))
+    implementation(project(':network'))
+//    implementation(project(':mvvm'))
+//    implementation(project(':myLocation'))
+    implementation(project(':mileage'))
+//    implementation(project(':qrcode'))
+//    implementation(project(':nativelibTest'))
+
+    // (可选)
+//    implementation 'com.jieba:jieba_android:1.0.0'
+//    implementation project(path: ':jieba_android') // (可选)
+
+    //mediapipe
+    implementation project(path: ':mediepipe:audio_classifier:app') // (可选)
+    implementation project(path: ':mediepipe:face_detector:app') // (可选)
+    implementation project(path: ':mediepipe:face_landmarker:app') // (可选)
+    implementation project(path: ':mediepipe:gesture_recognizer:app') // (可选)
+    implementation project(path: ':mediepipe:hand_landmarker:app') // (可选)
+    implementation project(path: ':mediepipe:image_classification:app') // (可选)
+    implementation project(path: ':mediepipe:image_embedder:app') // (可选)
+    implementation project(path: ':mediepipe:image_segmentation:category_mask:app') // (可选)
+//    implementation project(path: ':mediepipe:image_segmentation:confidence_mask:app') // (可选)
+    implementation project(path: ':mediepipe:interactive_segmentation:app') // (可选)
+    implementation project(path: ':mediepipe:language_detector:app') // (可选)
+    implementation project(path: ':mediepipe:object_detection:app') // (可选)
+    implementation project(path: ':mediepipe:pose_landmarker:app') // (可选)
+    implementation project(path: ':mediepipe:text_classification:app') // (可选)
+    implementation project(path: ':mediepipe:text_embedder:app')
+
+
+
+    //ndk-sample
+    implementation project(path: ':ndk_sample:audio-echo:app')
+    implementation project(path: ':ndk_sample:bitmap-plasma:app')
+    implementation project(path: ':ndk_sample:camera:basic')
+    implementation project(path: ':ndk_sample:camera:texture-view')
+    implementation project(path: ':ndk_sample:display-p3:image-view')
+    implementation project(path: ':ndk_sample:endless-tunnel:app')
+    implementation project(path: ':ndk_sample:exceptions:app')
+    implementation project(path: ':ndk_sample:gles3jni:app')
+    implementation project(path: ':ndk_sample:hello-gl2:app')
+//    implementation project(path: ':ndk_sample:hello-jni:app')
+//    implementation project(path: ':ndk_sample:hello-oboe:app')
+//    implementation project(path: ':ndk_sample:hello-vulkan:app')
+//    implementation project(path: ':ndk_sample:prefab:curl-ssl:app')
+//    implementation project(path: ':ndk_sample:prefab:prefab-dependency:app')
+    implementation project(path: ':ndk_sample:hello-jniCallback:app')
+    implementation project(path: ':ndk_sample:hello-libs:app')
+    implementation project(path: ':ndk_sample:hello-neon:app')
+    implementation project(path: ':ndk_sample:native-activity:app')
+    implementation project(path: ':ndk_sample:native-audio:app')
+    implementation project(path: ':ndk_sample:native-codec:app')
+    implementation project(path: ':ndk_sample:native-media:app')
+    implementation project(path: ':ndk_sample:native-midi:app')
+    implementation project(path: ':ndk_sample:native-plasma:app')
+    implementation project(path: ':ndk_sample:nn-samples:sequence')
+    implementation project(path: ':ndk_sample:orderfile:app')
+    implementation project(path: ':ndk_sample:prefab:prefab-publishing:mylibrary')
+    implementation project(path: ':ndk_sample:san-angeles:app')
+    implementation project(path: ':ndk_sample:sanitizers:app')
+    implementation project(path: ':ndk_sample:sensor-graph:accelerometer')
+    implementation project(path: ':ndk_sample:teapots:choreographer-30fps')
+    implementation project(path: ':ndk_sample:teapots:classic-teapot')
+    implementation project(path: ':ndk_sample:teapots:image-decoder')
+    implementation project(path: ':ndk_sample:teapots:more-teapots')
+    implementation project(path: ':ndk_sample:teapots:textured-teapot')
+    implementation project(path: ':ndk_sample:unit-test:app')
+    implementation project(path: ':ndk_sample:webp:view')
+
+//    androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
+//    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
+//    debugImplementation 'androidx.compose.ui:ui-tooling'
+//    debugImplementation 'androidx.compose.ui:ui-test-manifest'// (可选)
+
+}

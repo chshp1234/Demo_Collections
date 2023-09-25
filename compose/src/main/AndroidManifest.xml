@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.csp.compose">
+
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+    <queries>
+        <package android:name="com.android.chrome" />
+    </queries>
+
+    <application>
+        <activity android:name=".mediapipe.MediaPipeActivity" />
+        <activity android:name=".ndk.NdkSampleActivity" />
+        <activity android:name=".qalist.QAListActivity" />
+    </application>
+
+</manifest>

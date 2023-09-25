@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.csp.mynew.MyGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clipChildren="false"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/net"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        android:text="访问网络"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/jieba_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="bottom"
+        android:minHeight="100dp"
+        android:text="迅雷不及掩耳盗铃儿响叮当仁不让之势" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/jiebaa"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        android:text="分词"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        android:text="高德定位"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mileage"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        android:text="里程统计"
+        android:textColor="#333333"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/qrcode"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        android:text="扫码"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/my_jni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        android:text="MY_JNI"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/compose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        android:text="Compose"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <com.csp.mynew.MyText
+        android:id="@+id/ndk_sample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        android:text="ndk_sample"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mqtt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        android:text="test_mqtt"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/aidl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="50dp"
+        android:padding="10dp"
+        android:text="test_aidl"
+        android:textColor="#333333"
+        android:textSize="16sp" />
+
+    <!--<android.inputmethodservice.KeyboardView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"/>-->
+
+    <!--<android.inputmethodservice.Keyboard
+        android:keyWidth="500dp"
+        android:keyHeight="500dp"
+        android:horizontalGap="2px"
+        android:verticalGap="2px" >
+        <Row android:keyWidth="32px" >
+            <Key android:keyLabel="A" />
+
+        </Row>
+
+    </android.inputmethodservice.Keyboard>-->
+
+</com.csp.mynew.MyGroup>

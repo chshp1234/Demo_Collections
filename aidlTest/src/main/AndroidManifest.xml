@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.aidltest">
+
+    <!-- <permission android:name="com.timemm.permission.SEND_PUSH_NOTIFICATION" /> -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- 音频录制权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- 监听开机广播 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.timemm.permission.SEND_PUSH_NOTIFICATION" />
+
+    <application>
+
+        <service
+            android:name=".FloatWindowService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":float">
+            <intent-filter>
+                <action android:name="com.example.administrator.myapplication.floatWindowService" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

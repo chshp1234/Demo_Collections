@@ -1,0 +1,90 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents">
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="colorPrimary">@color/gray</item>
+        <item name="colorPrimaryDark">@color/transparent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="RequestAccessActivityTranslucent" parent="Theme.MaterialComponents">
+        <item name="colorPrimary">@color/gray</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@color/translucence</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="mToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
+        <!-- 设置该属性解决Toolbar左边空白 默认为16dp-->
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="titleMargin">0dp</item>
+        <!--Toolbar Button min Height.Suggest use 0dp,
+            also can use your Toolbar's Height-->
+        <item name="android:minHeight">0dp</item>
+        <!--Toolbar Button Max height.
+            Suggest use size <= your custom Toolbar's Height-->
+        <item name="maxButtonHeight">100dp</item>
+    </style>
+
+    <style name="customProgressBarLoading" parent="Widget.AppCompat.ProgressBar">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="customProgressBarAlert" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="customDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/colorAccent</item>
+    </style>
+
+    <style name="baseDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowBackground">@color/transparent</item><!-- 自己想要的背景 -->
+        <item name="android:windowFrame">@null</item><!-- 边框 -->
+        <item name="android:windowNoTitle">true</item><!-- 无标题 -->
+        <item name="android:windowIsFloating">true</item><!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item><!-- 半透明 -->
+        <item name="android:background">@color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item><!-- 模糊 -->
+        <!--<item name="android:windowAnimationStyle">@style/MyDialogAnimation</item>&lt;!&ndash; 进入和退出的动画 &ndash;&gt;-->
+        <!--<item name="android:windowSoftInputMode">stateAlwaysVisible</item>&lt;!&ndash;显示软件盘&ndash;&gt;-->
+    </style>
+
+    <style name="lovelyAlertDialogStyle" parent="baseDialogStyle"></style>
+
+    <style name="freeBottomDialogStyle" parent="lovelyAlertDialogStyle">
+        <item name="android:windowAnimationStyle">@style/freeBottomDialogAnimStyle</item>
+    </style>
+
+    <style name="freeBottomDialogAnimStyle" parent="android:Animation"></style>
+
+    <style name="CustomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:minHeight">11dp</item>
+        <item name="android:maxHeight">11dp</item>
+        <item name="android:maxWidth">12dp</item>
+        <item name="android:minWidth">12dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+</resources>

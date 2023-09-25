@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_sort"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal">
+
+    <com.example.administrator.myapplication.CustomView.CustomTextView
+        android:id="@+id/sort_unite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:gravity="center"
+        android:tag="sort_unite"
+        android:text="综合"
+        android:textColor="@color/red"
+        android:textSize="14sp" />
+
+    <com.example.administrator.myapplication.CustomView.CustomTextView
+        android:id="@+id/sort_sales_volume"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:gravity="center"
+        android:tag="sort_sales_volume"
+        android:text="销量"
+        android:textColor="@color/text_black"
+        android:textSize="14sp" />
+
+    <com.example.administrator.myapplication.CustomView.CustomTextView
+        android:id="@+id/sort_price"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:gravity="center"
+        android:tag="sort_price"
+        android:text="价格"
+        android:textColor="@color/text_black"
+        android:textSize="14sp" />
+
+</LinearLayout>
