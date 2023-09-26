@@ -5,8 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.os.IBinder
 import android.provider.Settings
 import android.widget.EditText
@@ -42,6 +42,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
+
+        // onVsync信号执行绘制
+        // onCreate -> sendMsg -> onVsync -> sendFrameDisplayEventReceiverMsg -> onResume
+        // -> scheduleTraversals ->mChoreographer.postCallback(Choreographer.CALLBACK_TRAVERSAL, mTraversalRunnable, null);
+        // 最后一步中将CALLBACK_TRAVERSAL类型的消息加入内部的mCallbackQueues中，使得之前垂直同步信号的消息可以提前执行到绘制流程
+        Handler(mainLooper).post {
+            LogUtils.d(findViewById<TextView>(R.id.jiebaa).width)
+            LogUtils.d(findViewById<TextView>(R.id.jiebaa).height)
+        }
+
+        // performTraversals -> dispatchAttachedToWindow -> executeActions -> run
+        findViewById<TextView>(R.id.jiebaa).post {
+            LogUtils.d(findViewById<TextView>(R.id.jiebaa).width)
+            LogUtils.d(findViewById<TextView>(R.id.jiebaa).height)
+        }
 
 //        val resource = resources
 //        LogUtils.d(resource)

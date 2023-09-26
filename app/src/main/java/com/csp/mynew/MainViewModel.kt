@@ -5,10 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.blankj.utilcode.util.LogUtils
-import com.blankj.utilcode.util.ToastUtils
 import com.csp.mynew.net.CustomHttp
 import com.csp.mynew.net.bean.QA
-import com.csp.network.SimpleCallback
 import com.csp.network.data.Err
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -32,7 +30,7 @@ class MainViewModel : ViewModel() {
     fun getData() {
         viewModelScope.launch {
 
-
+            //三种方式加载网络
             val result = CustomHttp.getQABySuspendResult()
 //
 //            result.catch { onDataErr.value = it }
